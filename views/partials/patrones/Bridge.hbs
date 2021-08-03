@@ -1,0 +1,82 @@
+<script src="/Bridge/mainB.js" type="module"></script>
+<div class="container">
+    <div class="container">
+        <div class="row">
+
+            <h1>Tienda de impresoras</h1>
+
+            <div class="col">
+                <label>Usted compro:</label>
+                <form name="f" id="f">
+                    <input style="width:550px" type="text" name="ft" id="ft">
+                </form>
+            </div>
+            <div class="col">
+                <h3>Escoja una impresora</h3>
+
+
+                <div class="mb-3 form-check">
+                    <input type="checkbox" name="check" id="check1" value="1" onchange="javascript:showContent1()" />
+
+                    <label id="" value="" class="form-check-label" for="exampleCheck1">Normal</label>
+                </div>
+                <div class="mb-3 form-check">
+                    <input type="checkbox" name="check" id="check2" value="1" onchange="javascript:showContent2()" />
+                    <label id="" value="" class="form-check-label" for="exampleCheck1">3D</label>
+                </div>
+                <div id="content1" style="display: none;">
+                    <select id="selcNormal">
+                        <option value="1">Epson modelo 1, tinta 1</option>
+                        <option value="2">Epson modelo 1, tinta 2</option>
+                        <option value="3">Epson modelo 2</option>
+
+                    </select>
+                    <button id="normButton" class="btn btn-warning">Comprar</button>
+                </div>
+                <div id="content2" style="display: none;">
+                    <select id="selc3d">
+                        <option value="1">Marca Ender</option>
+                        <option value="2">Marca ANET A8</option>
+
+                    </select>
+
+                    <button id="3dButton" class="btn btn-warning">Comprar</button>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function showContent1() {
+        element = document.getElementById("content1");
+        check = document.getElementById("check1");
+        checkoff = document.getElementById('check2');
+
+        if (check.checked) {
+            element.style.display = 'block';
+            checkoff.style.display = 'none';
+        }
+        else {
+            element.style.display = 'none';
+            checkoff.style.display = 'block';
+
+        }
+    }
+    function showContent2() {
+        element = document.getElementById("content2");
+        check = document.getElementById("check2");
+        checkoff = document.getElementById('check1');
+
+        if (check.checked) {
+            element.style.display = 'block';
+            checkoff.style.display = 'none';
+        }
+        else {
+            element.style.display = 'none';
+            checkoff.style.display = 'block';
+
+        }
+    }
+</script>
